@@ -1,0 +1,735 @@
+/* ==========================================================
+   1. Hero Sections
+   ========================================================== */
+.about-hero {
+    background: url('./images/about-h.gif') no-repeat center;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    color: white;
+    font-size: 2rem;
+}
+
+.about-hero h2 {
+    text-align: center;
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2rem;
+    margin-top: 5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .about-hero h2{
+        font-size: 1.3rem;
+    }
+}
+
+/* ==========================================================
+   2. Meet Section
+   ========================================================== */
+
+.meet-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 5rem;
+    background-color: #f5f5f5;
+    z-index: 0;
+}
+
+.meet-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/gry.png),
+    url(./images/gry-doc.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -170px 120px, 1130px 220px;
+    background-size: 300px, 500px;
+    z-index: -1;
+}
+
+.meet-image {
+    flex: 0 0 55%;
+    max-width: 400px;
+    margin: 4rem 0;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.meet-image img{
+    border-radius: 20px;
+}
+
+.meet-content {
+    flex: 0 0 30%;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.meet-content h6 {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1.25rem;
+    color:#000;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 200;
+}
+
+.meet-content h2{
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.43125rem;
+    color:#f54078;
+    text-align: left;
+    margin-bottom: 3rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.meet-content p {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 0.9375rem;
+    color:#2e2e2e;
+    line-height: 1.5;
+    font-weight: 100;
+    text-align: justify;
+}
+
+@media (max-width: 480px) {
+.meet-container {
+flex-direction: column;
+padding: 1.5rem 1rem;
+gap: 2rem;
+}
+
+.meet-container::before {
+background-position: -100px 80px, 200px 400px;
+background-size: 180px, 250px;
+}
+
+.meet-content {
+order: 1;
+flex: 0 0 auto;
+width: 100%;
+padding: 0;
+text-align: center;
+}
+
+.meet-content h6 {
+font-size: 1.1rem;
+text-align: center;
+margin-bottom: 0.5rem;
+}
+
+.meet-content h2 {
+font-size: 1.8rem;
+text-align: center;
+margin-bottom: 1.5rem;
+padding:0 1rem;
+}
+
+.meet-content p {
+font-size: 0.9rem;
+text-align: center;
+line-height: 1.6;
+}
+
+.meet-image {
+order: 2;
+flex: 0 0 auto;
+width: 100%;
+max-width: 400px;
+margin:0 auto;
+
+}
+
+.meet-image img {
+border-radius: 12px;
+width: 100%;
+}
+}
+
+/* ==========================================================
+   3. Female doctor
+   ========================================================== */
+
+.indi-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+    background-color: #eff8ea;
+    margin: 0 auto;
+}
+
+.indi-container .indi-image {
+    flex: 0 0 50%;
+    overflow: hidden;
+}
+
+.indi-container .indi-image img {
+    width: 750px;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+}
+
+.indi-container .indi-content {
+    flex: 0 0 40%;
+    padding-right: 10%;
+}
+
+.indi-container .indi-content h2 {
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.43125rem;
+    color:#f54078;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.indi-container .indi-content h4 {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1.25rem;
+    color:#000;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.indi-container .indi-content p {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 0.9375rem;
+    color:#2e2e2e;
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+.service {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    background-color: #fff;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+    padding: 5rem;
+}
+
+.service .right {
+    flex: 0 0 25%;
+}
+
+.service .right h2 {
+    text-align: right;
+    color: #f54078;
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.service .left {
+    flex: 0 0 75%;
+    padding-right: 15rem;
+}
+
+.service .left h4 {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1.25rem;
+    text-align: left;
+    color: #f54078;
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+}
+
+.service .left p {
+    font-family: 'CanavaSans', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #2e2e2e;
+}
+
+.service .left hr {
+    color: #606060;
+    margin: 1rem 0;
+}
+
+.service ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.024);
+    background-image:
+        url(./images/med-b.png),
+        url(./images/med-b.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+        calc(100% - -80px) 0,
+        -120px 240px;
+    background-size:
+        200px 200px,
+        420px 420px;
+    z-index: -1;
+}
+
+@media (max-width: 480px) {
+.indi-container {
+flex-direction: column;
+padding: 1.5rem 0 1.5rem 1rem;
+gap: 2rem;
+}
+
+.indi-container::before {
+background-position: -100px 80px, 200px 400px;
+background-size: 180px, 250px;
+}
+
+.indi-content {
+order: 1;
+flex: 0 0 auto;
+width: 100%;
+padding: 0;
+text-align: center;
+padding-left: 5%;
+}
+
+.indi-container .indi-content h4 {
+font-size: 1rem;
+text-align: center;
+margin-bottom: 0.5rem;
+}
+
+.indi-container .indi-content h2 {
+font-size: 2rem;
+text-align: center;
+margin-bottom:0;
+}
+
+.indi-container .indi-content p {
+font-size: 1rem;
+text-align: center;
+line-height: 1.6;
+margin:0 auto;
+}
+
+.indi-container .indi-image {
+order: 2;
+flex: 0 0 auto;
+width: 100%;
+max-width: 400px;
+margin:0 auto;
+
+}
+
+.indi-container .indi-image img {
+border-radius: 12px;
+width: 98%;
+}
+
+.service{
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+.service::before {
+background-image: none ;
+content: none;
+filter: 0.05
+
+}
+.service .right{
+    flex: 0 0 auto;
+    width: 100%;
+    order: 1;
+}
+
+.service .right h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.service .left{
+    flex: 0 0 auto;
+    width: 100%;
+    padding-right: 0;
+    order: 2;
+}
+
+.service .left h4{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.service .left p {
+font-size: 0.9rem;
+text-align: center;
+}
+
+.service .left p br{
+    display: none;
+}
+
+.service .left hr {
+margin: 0.8rem auto;
+width: 80%;
+}
+
+.service .right h2 br {
+display: none;
+}
+}
+
+/* ==========================================================
+   3. Male doctor
+   ========================================================== */
+
+.indi-container-m {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: #eff8ea;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.indi-container-m .indi-image2 {
+    flex: 0 0 40%;
+    overflow: hidden;
+    padding: 1rem 1rem 0 16rem;
+}
+
+.indi-container-m .indi-text {
+    flex: 0 0 55%;
+    padding-right: 22rem;
+}
+
+.indi-container-m .indi-text h2 {
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.43125rem;
+    color: #f54078;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 0.3rem;
+}
+
+.indi-container-m .indi-text h5 {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1.25rem;
+    color: #000;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.indi-container-m .indi-text p {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1rem;
+    color: #2e2e2e;
+    font-weight: 200;
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.indi-container-m ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.1);
+    background-image: url(./images/gren.png);
+    background-repeat: no-repeat;
+    background-position:calc(100% - -80px) -40px;
+    background-size:250px 300px;
+    z-index: -1;
+}
+
+.service-m {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    background-color: #fff;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+    padding: 5rem;
+}
+
+.service-m .right {
+    flex: 0 0 25%;
+}
+
+.service-m .right h2 {
+    text-align: right;
+    color: #f54078;
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.service-m .left {
+    flex: 0 0 75%;
+    padding-right: 15rem;
+}
+
+.service-m .left h4 {
+    font-family: 'CanvaSans', sans-serif;
+    font-size: 1.25rem;
+    text-align: left;
+    color: #f54078;
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+}
+
+.service-m .left p {
+    font-family: 'CanavaSans', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #2e2e2e;
+}
+
+.service-m .left hr {
+    color: #606060;
+    margin: 1rem 0;
+}
+
+.service-m ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.025);
+    background-image:
+        url(./images/med-b.png),
+        url(./images/med-b.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+        calc(100% - -40px) 500px,
+        -160px 20px;
+    background-size:
+        200px 200px,
+        420px 420px;
+    z-index: -1;
+}
+
+@media (max-width: 480px) {
+  /* Indi Container Mobile Styles */
+  .indi-container-m {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .indi-container-m .indi-image2 {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0;
+    order: 2;
+  }
+  
+  .indi-container-m .indi-image2 img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .indi-container-m .indi-text {
+    flex: 0 0 auto;
+    width: 100%;
+    padding-right: 0;
+    order: 1;
+    text-align: center;
+  }
+  
+  .indi-container-m .indi-text h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .indi-container-m .indi-text h5 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  .indi-container-m .indi-text p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  .indi-container-m::before {
+    background-position: calc(100% - -40px) -20px;
+    background-size: 150px 180px;
+    filter: opacity(0.05);
+  }
+  
+  /* Service Mobile Styles */
+  .service-m {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .service-m .right {
+    flex: 0 0 auto;
+    width: 100%;
+    order: 1;
+  }
+  
+  .service-m .right h2 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  
+  .service-m .right h2 br {
+    display: none;
+  }
+  
+  .service-m .left {
+    flex: 0 0 auto;
+    width: 100%;
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .service-m .left h4 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .service-m .left p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .service-m .left hr {
+    margin: 0.8rem auto;
+    width: 80%;
+  }
+  
+  .service-m::before {
+    background-image: none;
+  }
+}
+
+/* ==========================================================
+   3. Experience
+   ========================================================== */
+
+.experience-section {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/doc-pi.png);
+    background-repeat: no-repeat;
+    background-position: -160px 50px;
+    background-size: 500px 500px;
+    z-index: -1;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f54284;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 0 0 250px;
+  border: 2px solid #f54284;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f54078;
+}
+
+.card-title-3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f54078;
+  margin-top:1.5rem;
+  
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #343434;
+  margin-bottom: 8px;
+}
+
+.divider {
+  height: 2px;
+  width: 75%;
+  margin: 10px auto 20px;
+  background-color: #f54078;
+}
+
+.divider-3 {
+  height: 2px;
+  width: 75%;
+  margin: 25px auto 20px;
+  background-color: #f54078;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+.card-text-2 {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}

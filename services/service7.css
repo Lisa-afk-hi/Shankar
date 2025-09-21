@@ -1,0 +1,250 @@
+.para {
+    display: flex;
+    max-width: 1800px;
+    background-color: #f5f5f5;
+}
+
+.para .para-left {
+    flex: 0 0 50%;
+}
+
+.para .para-left img {
+    width: 100%;
+    height: 550px;
+}
+
+.para .para-right {
+    flex: 0 0 40%;
+    padding: 5rem 3rem;
+}
+
+.para .para-right .b {
+    color: #f64279;
+    font-family: 'CanavaSans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.para .para-right .p {
+    color: #2e2e2e;
+    font-family: 'CanavaSans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* next sec */
+
+.c-sec {
+    text-align: center;
+    padding: 4rem 6rem 2rem 6rem;
+    position: relative;
+}
+
+.c-sec .s-title {
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 2.5rem;
+    color: #f54078;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.c-sec .s-p {
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 1rem;
+    color: #f54078;
+    margin: 3rem 20rem;
+    font-weight: 400;
+
+}
+
+.c-sec .p-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 3rem;
+}
+
+.c-sec .p-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-sec .p-card .p-i {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.c-sec .p-card .p-t {
+    margin-bottom: 12px;
+    color: #f54078;
+    font-size: 1.16875rem;
+    font-family: 'PlayfairDisplay', serif;
+    font-weight: bold;
+}
+
+.c-sec .p-card .p-p {
+    padding: 0 2rem;
+    color: #000;
+    font-size: 1rem;
+    font-family: 'CanavaSans', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.c-sec::before {
+    content: '';
+    position: absolute;
+    background: #f7f9fb;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+    url(../images/gry.png),
+    url(../images/l-1.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+    -135px 0,
+    1200px 360px;
+    background-size:
+    250px 300px,
+    500px 400px;
+    z-index: -1;
+}
+
+/* next section */
+
+.v-sec {
+    text-align: center;
+    padding: 1rem 3rem;
+    position: relative;
+}
+
+.v-sec .divide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.v-sec .divide .d-left {
+    flex: 0 0 40%;
+    background: url(../images/punch.gif) no-repeat center;
+    background-size: contain;
+    height: 500px;
+    align-self: right;
+}
+
+.v-sec .divide .d-right {
+    flex: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0 ;
+    width: 400px;
+}
+
+.d-right h4{
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f54078;
+    text-align: left;
+    padding-bottom: 1rem;
+    padding-right: 20rem;
+    line-height: 1.5;
+}
+
+.d-right p {
+    font-family: 'CanvaSans',sans-serif;
+    font-size: 1rem;
+    color: #2e2e2e;
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+.v-sec .v-p {
+    font-family: 'CanavaSans', sans-serif;
+    font-size: 1rem;
+    color: #f54078;
+    padding: 1rem 20rem 0 20rem;
+}
+
+.v-sec::before {
+    content: '';
+    position: absolute;
+    background-color: #eff8ea;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/gry.png);
+    background-repeat: no-repeat;
+    background-position: 1310px 100px;
+    background-size: 500px 600px;
+    z-index: -1;
+}
+
+/* ========== Typewriter Animation Styles ========== */
+.anime {
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.anime h2 {
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #f66d97;
+    text-align: center;
+    min-height: 60px;
+    overflow: hidden;
+}
+
+.anime h2.typewriter {
+    border-right: 3px solid #f66d97;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #f66d97; }
+}
+
+.a-card {
+    background: white;
+    color: #f54078;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 30px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.a-card h2 {
+    color: #f54078;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.fly-in {
+    transform: translateY(0);
+    opacity: 1;
+}

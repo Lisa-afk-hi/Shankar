@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./images/dp.png" />
+    <title>Gallery - Shankara Ayurveda</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./gallery.css">
+    <link rel="stylesheet" href="./index.css">
+    </head>
+  <body>
+    <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo"><img src="./images/Logo.png" alt="logo"></div>
+      <nav class="nav-links" id="navLinks">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./gallery.html">Blog</a>
+        <!-- Treatments Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">
+            Our Treatments
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="./services/service7.html">Panchakarma</a>
+            <a href="./services/service1.html">Janu Basti</a>
+            <a href="./services/service2.html">Abhyanga</a>
+            <a href="./services/service3.html">Pinda Sweda</a>
+            <a href="./services/service4.html">Shirodhara</a>
+            <a href="./services/service5.html">Leech Therapy</a>
+            <a href="./services/service6.html">Yoga Programs</a>
+          </div>
+        </div>
+        <button><a href="./contact.html">Contact Us</a></button>
+      </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          <i class="ri-menu-3-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeBtn" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </button>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./gallery.html">Gallery</a>
+        <!-- Mobile Treatments Dropdown -->
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-toggle">
+          Our Treatments
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="mobile-dropdown-menu">
+          <a href="./services/service7.html">Panchakarma</a>
+          <a href="./services/service1.html">Janu Basti</a>
+          <a href="./services/service2.html">Abhyanga</a>
+          <a href="./services/service3.html">Pinda Sweda</a>
+          <a href="./services/service4.html">Shirodhara</a>
+          <a href="./services/service5.html">Leech Therapy</a>
+          <a href="./services/service6.html">Yoga Programs</a>
+        </div>
+      </div>
+        <a href="./contact.html" class="mobile-cta">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+      <img class="lotus-left" src="./assets/lotus.png" alt="" />
+      <img class="lotus-right" src="./assets/lotus.png" alt="" />
+      <div class="gallery-container" id="gallery">
+        <h1 class="gallery-title">Gallery</h1>
+        <div class="gallery-underline">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="./assets/1.webp"
+              alt="Modern spa interior with natural lighting"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/2.webp"
+              alt="Traditional Ayurvedic treatment room"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/3.webp"
+              alt="Ayurvedic herbs and oils display"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/4.webp"
+              alt="Meditation and wellness space"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/5.webp"
+              alt="Traditional massage therapy room"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/6.webp"
+              alt="Ayurvedic consultation area"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-about">
+      <img src="./images/Logo.png" alt="Logo" class="footer-logo">
+      <p>
+        The Ayurvedic zone is an Ayurvedic multi-specialty clinic, therapy center.
+      </p>
+      <hr/>
+      <h5>Follow Us On</h5>
+      <div class="social-icons">
+        <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+      </div>
+      
+      <div class="button">
+        <button><a href="./contact.html">Start Your Journey</a></button>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./gallery.html">Blog</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-treatments">
+      <h4>Ayurvedic Treatments</h4>
+      <ul>
+        <li><a href="./services/service7.html">Panchakarma</a></li>
+        <li><a href="./services/service1.html">Janu Basti</a></li>
+        <li><a href="./services/service2.html">Abhyanga</a></li>
+        <li><a href="./services/service3.html">Pinda Sweda</a></li>
+        <li><a href="./services/service4.html">Shirodhara</a></li>
+        <li><a href="./services/service5.html">Leech</a></li>
+        <li><a href="./services/service6.html">Yoga</a></li>
+      </ul>
+    </div>
+    <div class="footer-buttons">
+      <h4>Contact </h4>
+        <div class="info-item">
+          <i class="ri-phone-line icon"></i>
+          <div>
+            <p>91369 87309 | 99209 22940</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="ri-mail-line icon"></i>
+          <div>
+            <p>ayurvedashankara29@gmail.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="ri-map-pin-line icon"></i>
+          <div>
+            <p>Shivmandir, Ramnagar, Shivmandir Road, Dombivli (East), Dist. Thane - 421201</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="ri-time-line icon"></i>
+          <div>
+            <p>Mon – Sat: 09:00 AM – 06:00 PM<br>Sunday: Closed / By appointment</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Shankara Ayurveda. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script src="index.js"></script>
+  </body>
+</html>
