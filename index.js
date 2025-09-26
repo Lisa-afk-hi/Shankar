@@ -323,32 +323,22 @@ class DropdownHandler {
 /* ============================
    Map Initialization
 ============================= */
-function initMap() {
-  const mapWrapper = document.getElementById("mapWrapper");
-  if (!mapWrapper) return;
-  
-  const location = { lat: 19.217, lng: 73.088 };
-  const map = new google.maps.Map(mapWrapper, {
-    center: location,
-    zoom: 15,
-  });
-  new google.maps.Marker({
-    position: location,
-    map: map,
-    title: "Shankara Ayurveda",
-  });
-}
-
-function loadGoogleMapsApi() {
-  if (!document.getElementById("mapWrapper")) return;
-  
-  const script = document.createElement("script");
-  script.src =
-    "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap";
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-}
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const status = document.getElementById('formStatus');
+            status.textContent = 'Sending your message...';
+            status.className = 'status';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                status.textContent = 'Thank you! Your message has been sent successfully.';
+                status.className = 'status success';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+            }, 1500);
+        });
 
 /* ============================
    Contact Form
@@ -634,3 +624,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* ============================
+   footer ribbon
+============================= */
+
+document.addEventListener('DOMContentLoaded', function() {
+            const ribbon = document.querySelector('.ribbon');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const resumeBtn = document.getElementById('resumeBtn');
+            const speedUpBtn = document.getElementById('speedUpBtn');
+            const slowDownBtn = document.getElementById('slowDownBtn');
+            
+            let animationSpeed = 30; // seconds
+            
+            pauseBtn.addEventListener('click', function() {
+                ribbon.style.animationPlayState = 'paused';
+            });
+            
+            resumeBtn.addEventListener('click', function() {
+                ribbon.style.animationPlayState = 'running';
+            });
+            
+            speedUpBtn.addEventListener('click', function() {
+                animationSpeed = Math.max(5, animationSpeed - 5);
+                ribbon.style.animationDuration = animationSpeed + 's';
+            });
+            
+            slowDownBtn.addEventListener('click', function() {
+                animationSpeed = Math.min(60, animationSpeed + 5);
+                ribbon.style.animationDuration = animationSpeed + 's';
+            });
+        });

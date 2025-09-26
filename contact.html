@@ -32,7 +32,7 @@
             <a href="./services/service7.html">Panchakarma</a>
             <a href="./services/service1.html">Janu Basti</a>
             <a href="./services/service2.html">Abhyanga</a>
-            <a href="./services/service3.html">Pinda Sweda</a>
+            <a href="./services/service3.html">Njavara Kizhi</a>
             <a href="./services/service4.html">Shirodhara</a>
             <a href="./services/service5.html">Leech Therapy</a>
             <a href="./services/service6.html">Yoga Programs</a>
@@ -66,7 +66,7 @@
           <a href="./services/service7.html">Panchakarma</a>
           <a href="./services/service1.html">Janu Basti</a>
           <a href="./services/service2.html">Abhyanga</a>
-          <a href="./services/service3.html">Pinda Sweda</a>
+          <a href="./services/service3.html">Njavara Kizhi</a>
           <a href="./services/service4.html">Shirodhara</a>
           <a href="./services/service5.html">Leech Therapy</a>
           <a href="./services/service6.html">Yoga Programs</a>
@@ -76,108 +76,147 @@
     </nav>
   </div>
 
-  <div class="contact-container">
-    <h1 class="page-title">Get in Touch</h1>
-    <p class="page-subtitle">We’d love to hear from you — please fill out the form or use our contact info below.</p>
+ <div class="contact-container">
+        <div class="contact-grid">
+            <!-- Left Column: Contact Info -->
+            <div class="contact-info">
+                <h1>CONTACT US</h1>
+                
+                <div class="info-item">
+                    <h3><i class="ri-phone-line icon"></i></h3>
+                    <p>91369 87309 | 99209 22940</p>
+                </div>
+                
+                <div class="info-item">
+                    <h3><i class="ri-mail-line icon"></i></h3>
+                    <p>ayurvedashankara29@gmail.com</p>
+                </div>
+                
+                <div class="info-item">
+                    <h3><i class="ri-map-pin-line icon"></i></h3>
+                    <p>Shivmandir, Ramnagar, Shivmandir Road, Dombivli (East), Dist. Thane - 421201</p>
+                </div>
+                
+                <div class="info-item">
+                    <h3><i class="ri-time-line icon"></i></h3>
+                    <p>Mon – Sat: 09:00 AM – 06:00 PM<br>Sunday: Closed / By appointment</p>
+                </div>
+            </div>
 
-    <!-- top row: form + info -->
-    <div class="contact-grid">
-      <form id="contactForm" class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" name="phone" placeholder="Mobile no.">
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
-
-        <button type="submit" class="btn">Send Message</button>
-        <div id="formStatus" class="status"></div>
-      </form>
-
-      <div class="contact-info">
-        <div class="info-item">
-          <i class="ri-phone-line icon"></i>
-          <div>
-            <h4>Phone</h4>
-            <p>91369 87309 | 99209 22940</p>
-          </div>
+            <!-- Right Column: Contact Form -->
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-input" placeholder="How can we help you?" rows="3" required></textarea>
+                </div>
+                
+                <button type="submit" class="send-btn">Send</button>
+                <div id="formStatus" class="status"></div>
+            </form>
         </div>
-        <hr/>
-        <div class="info-item">
-          <i class="ri-mail-line icon"></i>
-          <div>
-            <h4>Email</h4>
-            <p>ayurvedashankara29@gmail.com</p>
-          </div>
-        </div>
-        <hr/>
-        <div class="info-item">
-          <i class="ri-map-pin-line icon"></i>
-          <div>
-            <h4>Address</h4>
-            <p>Shivmandir, Ramnagar, Shivmandir Road, Dombivli (East), Dist. Thane - 421201</p>
-          </div>
-        </div>
-        <hr/>
-        <div class="info-item">
-          <i class="ri-time-line icon"></i>
-          <div>
-            <h4>Hours</h4>
-            <p>Mon – Sat: 09:00 AM – 06:00 PM<br>Sunday: Closed / By appointment</p>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- bottom row: full-width map -->
-    <div class="map-wrapper" id="mapWrapper"></div>
-  </div>
+    <!-- Full-width Map Section -->
+    <div class="map-section">
+        <div class="map-wrapper">
+            <div class="map-placeholder">
+                <div>
+                    <i class="ri-map-pin-line" style="font-size: 48px; margin-bottom: 15px; display: block;"></i>
+                    <p>Embedded Map Location<br><span style="font-size: 14px;">Shivmandir, Ramnagar, Dombivli (East)</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<footer class="footer">
+
+<!-- ribbon -->
+     <div class="ribbon-container">
+            <div class="ribbon">
+                <!-- Multiple copies for seamless looping -->
+                <div class="ribbon-item">
+                    <i class="ri-time-line icon"></i>
+                    <div>
+                        <p>Mon – Sat: 09:00 AM – 06:00 PM | Sunday: Closed / By appointment</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-time-line icon"></i>
+                    <div>
+                        <p>Mon – Sat: 09:00 AM – 06:00 PM | Sunday: Closed / By appointment</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-time-line icon"></i>
+                    <div>
+                        <p>Mon – Sat: 09:00 AM – 06:00 PM | Sunday: Closed / By appointment</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-time-line icon"></i>
+                    <div>
+                        <p>Mon – Sat: 09:00 AM – 06:00 PM | Sunday: Closed / By appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer -->
+  <footer class="footer">
   <div class="footer-top">
     <div class="footer-about">
       <img src="./images/Logo.png" alt="Logo" class="footer-logo">
+      <div class="hid-button">
+        <button><a href="./contact.html">Start Your Journey</a></button>
+      </div>
       <p>
         The Ayurvedic zone is an Ayurvedic multi-specialty clinic, therapy center.
       </p>
       <hr/>
+      <div class="footer-about-header">
       <h5>Follow Us On</h5>
-      <div class="social-icons">
-        <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
-      </div>
-      
       <div class="button">
         <button><a href="./contact.html">Start Your Journey</a></button>
       </div>
     </div>
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About Us</a></li>
-        <li><a href="./gallery.html">Gallery</a></li>
-        <li><a href="./gallery.html">Blog</a></li>
-        <li><a href="./contact.html">Contact Us</a></li>
-      </ul>
+    <div class="social-icons">
+      <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
     </div>
-    <div class="footer-treatments">
-      <h4>Ayurvedic Treatments</h4>
-      <ul>
-        <li><a href="./services/service7.html">Panchakarma</a></li>
-        <li><a href="./services/service1.html">Janu Basti</a></li>
-        <li><a href="./services/service2.html">Abhyanga</a></li>
-        <li><a href="./services/service3.html">Pinda Sweda</a></li>
-        <li><a href="./services/service4.html">Shirodhara</a></li>
-        <li><a href="./services/service5.html">Leech</a></li>
-        <li><a href="./services/service6.html">Yoga</a></li>
-      </ul>
+    </div>
+    <div class="footer-columns-container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./gallery.html">Blog</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-treatments">
+        <h4>Ayurvedic Treatments</h4>
+        <ul>
+          <li><a href="./services/service7.html">Panchakarma</a></li>
+          <li><a href="./services/service1.html">Janu Basti</a></li>
+          <li><a href="./services/service2.html">Abhyanga</a></li>
+          <li><a href="./services/service3.html">Njavara Kizhi</a></li>
+          <li><a href="./services/service4.html">Shirodhara</a></li>
+          <li><a href="./services/service5.html">Leech</a></li>
+          <li><a href="./services/service6.html">Yoga</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-buttons">
       <h4>Contact </h4>
@@ -199,12 +238,12 @@
             <p>Shivmandir, Ramnagar, Shivmandir Road, Dombivli (East), Dist. Thane - 421201</p>
           </div>
         </div>
-        <div class="info-item">
+        <!-- <div class="info-item">
           <i class="ri-time-line icon"></i>
           <div>
             <p>Mon – Sat: 09:00 AM – 06:00 PM<br>Sunday: Closed / By appointment</p>
           </div>
-        </div>
+        </div> -->
     </div>
   </div>
   <div class="footer-bottom">
