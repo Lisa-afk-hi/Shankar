@@ -321,24 +321,91 @@ class DropdownHandler {
 }
 
 /* ============================
-   Map Initialization
-============================= */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+   Fixed Typewriter Animation
+============================ */
+function initTypewriterAnimation() {
+    const animeSection = document.querySelector('.anime');
+    if (!animeSection) return;
+    
+    // Get all h2 elements with data-text attribute
+    const textElements = Array.from(animeSection.querySelectorAll('h2[data-text]'));
+    const card = animeSection.querySelector('.a-card');
+    
+    // Store texts from data-text attribute
+    const originalTexts = textElements.map(el => el.getAttribute('data-text'));
+    
+    // Clear all text initially and set proper width for animation
+    textElements.forEach(el => {
+        el.textContent = '';
+        el.style.width = '0';
+        el.style.whiteSpace = 'nowrap';
+        el.style.overflow = 'hidden';
+        el.style.margin = '0 auto';
+        el.style.display = 'block';
+    });
+    
+    // Animation state
+    let currentText = 0;
+    let isInView = false;
+    let animationId;
+    
+    // Check if element is in viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Start animation when section comes into view
+    function checkScroll() {
+        if (isInView) return;
+        
+        if (isElementInViewport(animeSection)) {
+            isInView = true;
+            startAnimation();
+        }
+    }
+    
+    // The typewriter animation function
+    function startAnimation() {
+        if (currentText < textElements.length) {
+            const currentElement = textElements[currentText];
+            const text = originalTexts[currentText];
             
-            const status = document.getElementById('formStatus');
-            status.textContent = 'Sending your message...';
-            status.className = 'status';
+            // Add typewriter class
+            currentElement.classList.add('typewriter');
             
-            // Simulate form submission
-            setTimeout(() => {
-                status.textContent = 'Thank you! Your message has been sent successfully.';
-                status.className = 'status success';
-                
-                // Reset form
-                document.getElementById('contactForm').reset();
-            }, 1500);
-        });
+            // Animate the typing effect
+            let charIndex = 0;
+            function typeCharacter() {
+                if (charIndex < text.length) {
+                    currentElement.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Typing speed
+                } else {
+                    // Move to next text after delay
+                    currentText++;
+                    setTimeout(startAnimation, 1000); // Delay between texts
+                }
+            }
+            
+            typeCharacter();
+            
+        } else {
+            // All text animated, now show the card
+            if (card) {
+                card.classList.add('fly-in');
+            }
+        }
+    }
+    
+    // Set up scroll listener
+    window.addEventListener('scroll', checkScroll);
+    // Initial check
+    checkScroll();
+}
 
 /* ============================
    Contact Form
@@ -365,108 +432,6 @@ function initContactForm() {
     status.style.color = "green";
     form.reset();
   });
-}
-
-/* ============================
-   Typewriter Animation
-============================ */
-function initTypewriterAnimation() {
-    const animeSection = document.querySelector('.anime');
-    if (!animeSection) return;
-    
-    // Get all h2 elements in the anime section
-    const textElements = Array.from(animeSection.querySelectorAll('h2'));
-    const card = animeSection.querySelector('.a-card');
-    
-    // Store original texts
-    const originalTexts = textElements.map(el => el.textContent);
-    
-    // Clear all text initially
-    textElements.forEach(el => {
-        el.textContent = '';
-    });
-    
-    // Animation state
-    let currentText = 0;
-    let currentChar = 0;
-    let isInView = false;
-    let animationId;
-    
-    // Check if element is in viewport
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.bottom >= 0
-        );
-    }
-    
-    // Start animation when section comes into view
-    function checkScroll() {
-        if (isInView) return;
-        
-        if (isElementInViewport(animeSection)) {
-            isInView = true;
-            // Add cursor to first element
-            textElements[currentText].classList.add('typewriter');
-            animateText();
-        }
-    }
-    
-    // The typewriter animation function
-    function animateText() {
-        if (currentText < textElements.length) {
-            if (currentChar < originalTexts[currentText].length) {
-                textElements[currentText].textContent += originalTexts[currentText].charAt(currentChar);
-                currentChar++;
-                animationId = setTimeout(animateText, 40); // Adjust speed here
-            } else {
-                // Remove cursor from current text
-                textElements[currentText].classList.remove('typewriter');
-                
-                // Move to next text
-                currentText++;
-                currentChar = 0;
-                
-                if (currentText < textElements.length) {
-                    // Add cursor to next text
-                    textElements[currentText].classList.add('typewriter');
-                    animationId = setTimeout(animateText, 200); // Delay between texts
-                } else {
-                    // All text animated, now show the card
-                    card.classList.add('fly-in');
-                }
-            }
-        }
-    }
-    
-    // Set up scroll listener
-    window.addEventListener('scroll', checkScroll);
-    // Initial check
-    checkScroll();
-    
-    // Restart animation if needed (for demo purposes)
-    window.restartAnimation = function() {
-        // Reset animation state
-        currentText = 0;
-        currentChar = 0;
-        isInView = false;
-        
-        // Clear any existing timeouts
-        clearTimeout(animationId);
-        
-        // Clear all text and remove cursors
-        textElements.forEach(el => {
-            el.textContent = '';
-            el.classList.remove('typewriter');
-        });
-        
-        // Reset card
-        card.classList.remove('fly-in');
-        
-        // Check if in view to restart
-        checkScroll();
-    };
 }
 
 /* ============================
@@ -600,6 +565,65 @@ function initFAQ() {
 }
 
 /* ============================
+   Footer Ribbon Controls
+============================= */
+function initRibbonControls() {
+  const ribbon = document.querySelector('.ribbon');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const resumeBtn = document.getElementById('resumeBtn');
+  const speedUpBtn = document.getElementById('speedUpBtn');
+  const slowDownBtn = document.getElementById('slowDownBtn');
+  
+  if (!ribbon || !pauseBtn) return;
+  
+  let animationSpeed = 30; // seconds
+  
+  pauseBtn.addEventListener('click', function() {
+      ribbon.style.animationPlayState = 'paused';
+  });
+  
+  resumeBtn.addEventListener('click', function() {
+      ribbon.style.animationPlayState = 'running';
+  });
+  
+  speedUpBtn.addEventListener('click', function() {
+      animationSpeed = Math.max(5, animationSpeed - 5);
+      ribbon.style.animationDuration = animationSpeed + 's';
+  });
+  
+  slowDownBtn.addEventListener('click', function() {
+      animationSpeed = Math.min(60, animationSpeed + 5);
+      ribbon.style.animationDuration = animationSpeed + 's';
+  });
+}
+
+/* ============================
+   Map Initialization
+============================= */
+function initMap() {
+  // Simple form submission handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending your message...';
+      status.className = 'status';
+      
+      // Simulate form submission
+      setTimeout(() => {
+        status.textContent = 'Thank you! Your message has been sent successfully.';
+        status.className = 'status success';
+        
+        // Reset form
+        contactForm.reset();
+      }, 1500);
+    });
+  }
+}
+
+/* ============================
    Initialization on DOM ready
 ============================= */
 document.addEventListener("DOMContentLoaded", () => {
@@ -613,8 +637,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   initTestimonialSlider();
   initContactForm();
-  initFAQ(); // Initialize FAQ functionality
-  loadGoogleMapsApi();
+  initFAQ();
+  initRibbonControls();
+  initMap();
 
   // Preload critical images after load
   window.addEventListener("load", () => {
@@ -625,34 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ============================
-   footer ribbon
-============================= */
-
-document.addEventListener('DOMContentLoaded', function() {
-            const ribbon = document.querySelector('.ribbon');
-            const pauseBtn = document.getElementById('pauseBtn');
-            const resumeBtn = document.getElementById('resumeBtn');
-            const speedUpBtn = document.getElementById('speedUpBtn');
-            const slowDownBtn = document.getElementById('slowDownBtn');
-            
-            let animationSpeed = 30; // seconds
-            
-            pauseBtn.addEventListener('click', function() {
-                ribbon.style.animationPlayState = 'paused';
-            });
-            
-            resumeBtn.addEventListener('click', function() {
-                ribbon.style.animationPlayState = 'running';
-            });
-            
-            speedUpBtn.addEventListener('click', function() {
-                animationSpeed = Math.max(5, animationSpeed - 5);
-                ribbon.style.animationDuration = animationSpeed + 's';
-            });
-            
-            slowDownBtn.addEventListener('click', function() {
-                animationSpeed = Math.min(60, animationSpeed + 5);
-                ribbon.style.animationDuration = animationSpeed + 's';
-            });
-        });
+// Export for global access if needed
+window.restartAnimation = function() {
+  // Implementation for restarting animations if needed
+};
